@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>EcoLife – Save the Planet</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f5efe2;--card:#fff;--ink:#1c2b22;--mute:#5d6b61;--g1:#1f4d3a;--g2:#3f7d4e;--g3:#8fbf6a;--sand:#e8dcc2;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121c16;--card:#1b2a21;--ink:#eef2e8;--mute:#a5b4a8;--sand:#2a3a2f}}
+:root[data-theme="dark"]{--bg:#121c16;--card:#1b2a21;--ink:#eef2e8;--mute:#a5b4a8;--sand:#2a3a2f}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.15;margin:0 0 .5em}
+nav{position:sticky;top:0;z-index:20;background:var(--g1);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:10px 20px;padding-top:calc(10px + env(safe-area-inset-top,0px))}
+nav b{font:800 1.3rem Fraunces,serif}nav .links{display:flex;gap:4px;flex-wrap:wrap}
+nav a{color:#dff0d4;text-decoration:none;padding:6px 12px;border-radius:99px;font-size:.92rem;font-weight:500}
+nav a:hover,nav a.on{background:var(--g3);color:#10281c}
+@media(max-width:760px){nav{flex-direction:column;gap:6px}nav .links{justify-content:center}}
+main{max-width:1100px;margin:0 auto;padding:28px 20px 60px}
+.page{display:none}.page.on{display:block}
+.hero{position:relative;border-radius:28px;overflow:hidden;color:#fff;padding:90px 28px 150px;background:linear-gradient(#a9d8e8,#e9f3d4 60%);min-height:430px}
+.hero svg{position:absolute;inset:auto 0 0 0;width:100%;height:60%}
+.hero>div{position:relative;max-width:620px}
+.hero h1{font-size:clamp(2.2rem,7vw,4rem);font-weight:800;color:#12301f}
+.hero p{color:#1f3a2a;font-size:1.1rem}
+.btn{display:inline-block;border:0;cursor:pointer;font:600 1rem Inter,sans-serif;padding:13px 22px;border-radius:99px;background:var(--g1);color:#fff;text-decoration:none;margin:6px 8px 0 0;transition:transform .15s,background .15s}
+.btn:hover{transform:translateY(-2px);background:var(--g2)}.btn.alt{background:#fff;color:var(--g1)}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.card{background:var(--card);border-radius:22px;overflow:hidden;box-shadow:0 2px 14px rgba(20,50,30,.08)}
+.card .pad{padding:18px 20px}.card .img{height:120px;display:grid;place-items:center;font-size:3.4rem}
+.stat{padding:22px;border-radius:22px;background:var(--sand)}.stat b{font:800 2.3rem Fraunces,serif;color:var(--g2);display:block}
+section{margin-top:48px}h2{font-size:clamp(1.6rem,4vw,2.3rem)}
+.sub{color:var(--mute);max-width:640px}
+.tag{font-weight:600;color:var(--g2);margin:8px 0 0;font-size:.9rem}
+.card p{margin:2px 0 6px;font-size:.95rem}
+input,textarea,select{width:100%;padding:12px 14px;border-radius:14px;border:2px solid var(--sand);background:var(--card);color:var(--ink);font:inherit;margin-top:4px}
+input:focus,textarea:focus,button:focus-visible,a:focus-visible{outline:3px solid var(--g3);outline-offset:2px}
+label{display:block;margin:14px 0 0;font-weight:500}
+.err{color:#b3261e;font-size:.85rem;min-height:1.1em}
+.bar{height:16px;border-radius:99px;background:var(--sand);overflow:hidden;margin:10px 0}.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--g2),var(--g3));transition:width .4s}
+.ch{display:flex;gap:12px;align-items:center;padding:12px 16px;background:var(--card);border-radius:16px;cursor:pointer;margin:0}
+.ch input{width:22px;height:22px;margin:0;accent-color:var(--g2)}.ch.done span{text-decoration:line-through;color:var(--mute)}
+.opt{display:block;width:100%;text-align:left;margin:8px 0;padding:13px 16px;border-radius:14px;border:2px solid var(--sand);background:var(--card);color:var(--ink);font:inherit;cursor:pointer}
+.opt:hover{border-color:var(--g3)}.opt.ok{background:#d6efc9;border-color:#4a9a4d;color:#10281c}.opt.no{background:#f7d4d0;border-color:#c2564d;color:#3a0f0b}
+footer{background:var(--g1);color:#cfe3c4;padding:34px 20px calc(34px + env(safe-area-inset-bottom,0px));text-align:center}
+footer a{color:#fff;margin:0 10px;text-decoration:none}.soc{display:flex;gap:12px;justify-content:center;margin-top:14px}
+.soc a{width:40px;height:40px;border-radius:50%;background:var(--g2);display:grid;place-items:center;margin:0;font-weight:700}.soc a:hover{background:var(--g3);color:#10281c}
+.quote{font:600 1.4rem/1.45 Fraunces,serif;background:var(--g1);color:#fff;padding:28px;border-radius:24px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style></head><body>
+<nav><b>🌿 EcoLife</b><div class="links" id="nav"></div></nav>
+<main>
+<div class="page" id="home">
+ <div class="hero"><div>
+  <h1>Save Our Planet, Protect Our Future.</h1>
+  <p>Clean air, healthy oceans and thriving forests keep every one of us alive. Small daily choices add up to a planet our children can enjoy.</p>
+  <a class="btn" href="#issues">Explore Environmental Issues</a><a class="btn alt" href="#challenges">Start Making a Difference</a></div>
+  <svg viewBox="0 0 800 300" preserveAspectRatio="none"><circle cx="650" cy="40" r="40" fill="#ffe9a8"/><path d="M0 140Q150 40 300 130T600 110T800 150V300H0Z" fill="#8fbf6a"/><path d="M0 200Q200 120 400 190T800 180V300H0Z" fill="#3f7d4e"/><path d="M0 250Q250 200 500 250T800 240V300H0Z" fill="#1f4d3a"/></svg></div>
+ <section><h2>Why it matters</h2><div class="grid" id="stats"></div></section>
+ <section><h2>The big problems</h2><p class="sub">Six challenges shape the future of our planet.</p><div class="grid" id="mini"></div><p><a class="btn" href="#issues">See causes and solutions</a></p></section>
+ <section><h2>Simple ways to help today</h2><div class="grid" id="ways"></div></section>
+</div>
+<div class="page" id="issues"><h2>Environmental Issues</h2><p class="sub">What is going wrong, why it happens, and what we can do.</p><div class="grid" id="issueList"></div></div>
+<div class="page" id="recycling"><h2>Recycling Guide</h2><p class="sub">Not sure where something goes? Search for it.</p>
+ <input id="rs" type="search" placeholder="Try: pizza box, battery, glass jar..." aria-label="Search items"><div id="rres" style="margin:12px 0"></div><div class="grid" id="recList"></div></div>
+<div class="page" id="challenges"><h2>30 Days to a Greener Life</h2><p class="sub">Tick off each habit as you do it.</p>
+ <div class="bar"><i id="pb"></i></div><p id="pt" class="tag"></p><div id="chList" style="display:grid;gap:8px"></div><p><button class="btn" id="reset">Reset progress</button></p></div>
+<div class="page" id="quiz"><h2>Environmental Quiz</h2><div id="qbox"></div></div>
+<div class="page" id="about"><h2>About EcoLife</h2><p class="sub">Our mission is to turn environmental concern into everyday action through clear facts, practical guides and friendly challenges.</p>
+ <div class="quote">We believe that protecting our planet starts with small actions. Every individual has the power to make a difference, and together, we can create a cleaner, healthier, and more sustainable future.</div>
+ <div class="grid" style="margin-top:20px"><div class="card pad"><h3>Learn</h3><p>Understand the issues behind the headlines.</p></div><div class="card pad"><h3>Act</h3><p>Build habits that cut waste and save energy.</p></div><div class="card pad"><h3>Share</h3><p>Inspire friends and family to join in.</p></div></div></div>
+<div class="page" id="contact"><h2>Contact us</h2><form id="cf" novalidate style="max-width:560px">
+ <label>Name<input id="cn"><span class="err"></span></label><label>Email<input id="ce" type="email"><span class="err"></span></label>
+ <label>Subject<input id="cs"><span class="err"></span></label><label>Message<textarea id="cm" rows="5"></textarea><span class="err"></span></label>
+ <button class="btn" type="submit">Send message</button><p id="cok" class="tag"></p></form></div>
+</main>
+<footer><div id="fnav"></div><div class="soc"><a href="#home" aria-label="Facebook">f</a><a href="#home" aria-label="Instagram">◎</a><a href="#home" aria-label="X">X</a><a href="#home" aria-label="YouTube">▶</a></div><p style="margin-top:16px;font-size:.85rem">© 2026 EcoLife. Every small action counts.</p></footer>
+<script>
+const $=s=>document.querySelector(s),pages=[["home","Home"],["issues","Issues"],["recycling","Recycling"],["challenges","Challenges"],["quiz","Quiz"],["about","About"],["contact","Contact"]];
+$("#nav").innerHTML=pages.map(p=>`<a href="#${p[0]}" data-p="${p[0]}">${p[1]}</a>`).join("");
+$("#fnav").innerHTML=pages.map(p=>`<a href="#${p[0]}">${p[1]}</a>`).join("");
+function route(){let h=location.hash.slice(1);if(!pages.some(p=>p[0]==h))h="home";document.querySelectorAll(".page").forEach(e=>e.classList.toggle("on",e.id==h));document.querySelectorAll("nav a").forEach(a=>a.classList.toggle("on",a.dataset.p==h));window.scrollTo(0,0)}
+addEventListener("hashchange",route);route();
+const stats=[["91%","of plastic ever made has never been recycled"],["1 in 3","people worldwide lack safe drinking water"],["10M ha","of forest lost every year"],["30%","less energy needed to recycle many metals vs. new"]];
+$("#stats").innerHTML=stats.map(s=>`<div class="stat"><b>${s[0]}</b>${s[1]}</div>`).join("");
+const issues=[
+["🌍","Climate change","#cfe8f3","Long-term warming of Earth's climate.","Burning coal, oil and gas; industrial farming.","Heatwaves, rising seas, stronger storms.","Renewable energy, efficiency, protecting forests."],
+["🏭","Air pollution","#e3e0d6","Harmful particles and gases in the air we breathe.","Traffic, factories, burning waste.","Asthma, heart disease, smog.","Public transport, clean power, stricter limits."],
+["💧","Water pollution","#cde6ee","Rivers, lakes and seas contaminated by waste.","Sewage, chemicals, farm runoff, oil spills.","Unsafe drinking water, dying aquatic life.","Treat wastewater, avoid dumping, save water."],
+["🌳","Deforestation","#d6ebc4","Large-scale clearing of forests.","Farming, logging, mining, roads.","Lost habitats, more CO₂, soil erosion.","Plant trees, buy certified wood, protect reserves."],
+["🛍️","Plastic pollution","#f3e2c3","Plastic waste piling up on land and in oceans.","Single-use items, poor waste systems.","Harmed wildlife, microplastics in food.","Reuse, refill, recycle, ban single-use items."],
+["🐼","Loss of biodiversity","#e6dcef","Species vanishing faster than ever.","Habitat loss, hunting, pollution, climate change.","Broken food chains, weaker ecosystems.","Protected areas, sustainable choices, wildlife corridors."]];
+$("#mini").innerHTML=issues.map(i=>`<a href="#issues" style="text-decoration:none;color:inherit"><div class="card"><div class="img" style="background:${i[2]}">${i[0]}</div><div class="pad"><h3>${i[1]}</h3><p>${i[3]}</p></div></div></a>`).join("");
+$("#issueList").innerHTML=issues.map(i=>`<div class="card"><div class="img" style="background:${i[2]}">${i[0]}</div><div class="pad"><h3>${i[1]}</h3><p>${i[3]}</p><p class="tag">Causes</p><p>${i[4]}</p><p class="tag">Consequences</p><p>${i[5]}</p><p class="tag">Solutions</p><p>${i[6]}</p></div></div>`).join("");
+const ways=[["♻️","Recycle right","Sort waste by material and rinse containers."],["🚰","Save water","Take shorter showers and fix leaks."],["🚲","Move green","Walk, cycle or share rides."],["💡","Save energy","Switch off lights and unplug chargers."]];
+$("#ways").innerHTML=ways.map(w=>`<div class="card pad"><div style="font-size:2.2rem">${w[0]}</div><h3>${w[1]}</h3><p>${w[2]}</p></div>`).join("");
+const rec=[["🧴","Plastic","#cfe8f3","Bottles, containers and packaging marked 1 or 2 are widely accepted.","Water bottles, shampoo bottles, milk jugs, yogurt tubs"],["📰","Paper","#f3e8cc","Keep paper clean and dry so it can be pulped again.","Newspapers, cardboard, magazines, office paper"],["🫙","Glass","#d6ebe4","Glass can be recycled endlessly without losing quality.","Jars, bottles, sauce containers"],["🥫","Metal","#e3e3e8","Metals save huge amounts of energy when recycled.","Cans, foil, tin lids, aluminium trays"],["🍎","Organic","#d6ebc4","Compost food scraps to make rich soil.","Fruit peels, vegetable scraps, coffee grounds, leaves"]];
+$("#recList").innerHTML=rec.map(r=>`<div class="card"><div class="img" style="background:${r[2]}">${r[0]}</div><div class="pad"><h3>${r[1]}</h3><p>${r[3]}</p><p class="tag">Examples</p><p>${r[4]}</p></div></div>`).join("");
+const items={"plastic bottle":"Plastic bin. Empty and rinse it, then put the cap back on.","plastic bag":"Not curbside. Return to a store drop-off, or better, reuse it.","newspaper":"Paper bin. Keep it dry.","pizza box":"Compost the greasy part, recycle the clean lid.","cardboard":"Paper bin. Flatten it first.","glass jar":"Glass bin. Remove the lid and rinse.","glass bottle":"Glass bin. Rinse and remove the cap.","aluminum can":"Metal bin. Rinse and crush if you can.","tin can":"Metal bin. Rinse out the food.","battery":"Never in the bin. Take to a battery collection point.","banana peel":"Organic or compost bin.","coffee grounds":"Compost them. Plants love them.","light bulb":"Take to a hazardous waste or store collection point.","styrofoam":"Usually not recyclable. Check local rules and avoid it.","paper cup":"Often lined with plastic. Check local rules, otherwise general waste.","electronics":"Take to an e-waste recycling point."};
+$("#rs").oninput=e=>{const q=e.target.value.trim().toLowerCase();if(!q){$("#rres").innerHTML="";return}const m=Object.keys(items).filter(k=>k.includes(q)||q.includes(k));$("#rres").innerHTML=m.length?m.map(k=>`<div class="card pad" style="margin-bottom:8px"><b style="text-transform:capitalize">${k}</b><p>${items[k]}</p></div>`).join(""):`<div class="card pad">No match yet. Check your local recycling rules.</div>`};
+const tasks=["Avoid plastic bags","Turn off unneeded lights","Save water while brushing","Use a reusable bottle","Walk or cycle instead of driving","Plant a tree","Bring a reusable coffee cup","Eat one meat-free meal","Unplug idle chargers","Take a 5-minute shower","Fix or mend something","Buy secondhand","Compost food scraps","Say no to straws","Sort your recycling","Air-dry laundry","Use both sides of paper","Pick up litter","Buy local produce","Turn down the heating a degree","Skip food waste, eat leftovers","Use a cloth shopping bag","Share a ride or take transit","Cancel junk mail","Pack a waste-free lunch","Switch to LED bulbs","Donate unused clothes","Learn about a local species","Water plants with leftover water","Tell a friend about EcoLife"];
+let done={};try{done=JSON.parse(localStorage.getItem("eco")||"{}")}catch(e){}
+function drawCh(){$("#chList").innerHTML=tasks.map((t,i)=>`<label class="ch ${done[i]?"done":""}"><input type="checkbox" data-i="${i}" ${done[i]?"checked":""}><span>Day ${i+1}: ${t}</span></label>`).join("");const n=Object.values(done).filter(Boolean).length;$("#pb").style.width=n/30*100+"%";$("#pt").textContent=`${n} of 30 completed`+(n==30?" – you did it! 🎉":"")}
+$("#chList").onchange=e=>{done[e.target.dataset.i]=e.target.checked;try{localStorage.setItem("eco",JSON.stringify(done))}catch(x){}drawCh()};
+$("#reset").onclick=()=>{done={};try{localStorage.removeItem("eco")}catch(e){}drawCh()};drawCh();
+const qs=[["Which bin does a clean glass jar go in?",["Glass","Organic","General waste"],0,"Glass is endlessly recyclable."],["What gas is the main driver of climate change?",["Oxygen","Carbon dioxide","Helium"],1,"CO₂ from burning fossil fuels traps heat."],["Roughly how long does a plastic bottle last in nature?",["1 year","10 years","Hundreds of years"],2,"Plastic breaks into microplastics but never fully disappears."],["Which action saves the most water?",["Shorter showers","Leaving the tap on","Washing half loads"],0,"Showers use many litres per minute."],["Why are forests important?",["They absorb CO₂ and shelter wildlife","They make cities warmer","They cause smog"],0,"Forests store carbon and house most land species."],["What is composting?",["Burning rubbish","Turning food scraps into soil","Melting plastic"],1,"Compost returns nutrients to the soil."]];
+let qi=0,sc=0;
+function quiz(){const b=$("#qbox");if(qi>=qs.length){b.innerHTML=`<div class="card pad"><h3>You scored ${sc} / ${qs.length}</h3><p>${sc>=5?"Eco champion! 🌟":sc>=3?"Good work, keep learning.":"A great start. Try again!"}</p><button class="btn" id="again">Play again</button></div>`;$("#again").onclick=()=>{qi=0;sc=0;quiz()};return}
+const q=qs[qi];b.innerHTML=`<p class="tag">Question ${qi+1} of ${qs.length}</p><h3>${q[0]}</h3>${q[1].map((o,i)=>`<button class="opt" data-i="${i}">${o}</button>`).join("")}<p id="fb" class="sub"></p>`;
+b.querySelectorAll(".opt").forEach(btn=>btn.onclick=()=>{const i=+btn.dataset.i;b.querySelectorAll(".opt").forEach(x=>x.disabled=true);b.querySelectorAll(".opt")[q[2]].classList.add("ok");if(i==q[2])sc++;else btn.classList.add("no");$("#fb").innerHTML=q[3]+`<br><button class="btn" id="nx">${qi==qs.length-1?"See score":"Next question"}</button>`;$("#nx").onclick=()=>{qi++;quiz()}})}
+quiz();
+$("#cf").onsubmit=e=>{e.preventDefault();const f=["cn","ce","cs","cm"],msg=["Enter your name.","Enter a valid email.","Enter a subject.","Write a message."];let ok=true;f.forEach((id,i)=>{const el=$("#"+id),v=el.value.trim(),bad=!v||(id=="ce"&&!/^\S+@\S+\.\S+$/.test(v));el.nextElementSibling.textContent=bad?msg[i]:"";if(bad)ok=false});$("#cok").textContent=ok?"Thanks! Your message was sent (demo only).":"";if(ok)e.target.reset()};
+</script></body></html>
